@@ -1,8 +1,10 @@
+package tn.esprit.gestionzoo.entities;
+
 public class Zoo {
-    Animal[] animals ;
-    String name,city;
+   private Animal[] animals ;
+   private String name,city;
     static final int  nbrCages = 25;
-    int nbrAnimal;
+   private int nbrAnimal;
 
     public Zoo() {
     }
@@ -12,6 +14,40 @@ public class Zoo {
         this.name = name;
         this.city = city;
 
+    }
+
+    public Animal[] getAnimals() {
+        return animals;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public int getNbrAnimal() {
+        return nbrAnimal;
+    }
+
+    public void setAnimals(Animal[] animals) {
+        this.animals = animals;
+    }
+
+    public void setName(String name) {
+        if(name.isBlank())
+            System.out.println("il faut que chaque zoo obtient un nom");
+      else  this.name = name;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public void setNbrAnimal(int nbrAnimal) {
+        this.nbrAnimal = nbrAnimal;
     }
 
     void displayZoo(){
@@ -25,6 +61,8 @@ public class Zoo {
             nbrAnimal++;
             System.out.println("animal ajouter");
             return true;
+        } else if (isZooFull()) {
+            return false;
         } else {
             System.out.println("verifier votre capaciter des cages");
             return false;
@@ -42,14 +80,14 @@ public class Zoo {
 
     int searchAnimal(Animal animal) {
         for (int i = 0; i < nbrAnimal; i++) {
-            if (animal.name == animals[i].name) //animals[i].name.equals(animal.name)
+            if (animal.getName() == animals[i].getName()) //animals[i].name.equals(animal.name)
                 return i;
 
         }
         return -1;
     }
 
-    boolean removeAnimal(Animal animal) {
+ public   boolean removeAnimal(Animal animal) {
         int indexAnimal = searchAnimal(animal);
         if (indexAnimal == -1)
             return false;
@@ -63,11 +101,11 @@ public class Zoo {
 
     }
 
-    boolean isZooFull(){
+   public boolean isZooFull(){
         return nbrAnimal==nbrCages;
     }
 
-   static Zoo comparerZoo(Zoo z1,Zoo z2){
+ public  static Zoo comparerZoo(Zoo z1,Zoo z2){
        if(z1.nbrAnimal> z2.nbrAnimal)
            return z1;
        return z2;

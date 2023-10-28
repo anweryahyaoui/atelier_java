@@ -1,4 +1,7 @@
-import java.util.Scanner;
+package tn.esprit.gestionzoo.main;
+
+import tn.esprit.gestionzoo.entities.Animal;
+import tn.esprit.gestionzoo.entities.Zoo;
 
 public class ZooManagement {
     public static void main(String[] args) {
@@ -23,7 +26,7 @@ public class ZooManagement {
             // System.out.println(zooName+" comporte "+nbrCages+" cages");
 
         // Instruction 5 :
-           //  Animal lion = new Animal();
+           //  tn.esprit.gestionzoo.entities.Animal lion = new tn.esprit.gestionzoo.entities.Animal();
             /*
             lion.family = "cats";
 
@@ -32,7 +35,7 @@ public class ZooManagement {
             lion.isMammal = true;
             */
 
-           // Zoo myZoo = new Zoo();
+           // tn.esprit.gestionzoo.entities.Zoo myZoo = new tn.esprit.gestionzoo.entities.Zoo();
             /*
             myZoo.name = "belvider";
             myZoo.city = "tunisie";
@@ -41,8 +44,8 @@ public class ZooManagement {
             */
         // Instruction 6 : creation de constructeur parametre
         // Instruction 7 :
-      //  Animal lion = new Animal("cats","simba",10,true);
-      //  Zoo myZoo = new Zoo("belveder","tunisie",40);
+      //  tn.esprit.gestionzoo.entities.Animal lion = new tn.esprit.gestionzoo.entities.Animal("cats","simba",10,true);
+      //  tn.esprit.gestionzoo.entities.Zoo myZoo = new tn.esprit.gestionzoo.entities.Zoo("belveder","tunisie",40);
         // Instruction 8 :
         // myZoo.displayZoo();
        // System.out.println(myZoo.toString());
@@ -68,11 +71,16 @@ public class ZooManagement {
 
         // Instruction 15 :
         Zoo myZoo = new Zoo("belveder","tunisie");
-        boolean isFull= myZoo.isZooFull();
-        System.out.println(isFull);
+       boolean isFull= myZoo.isZooFull();
+       System.out.println(isFull);
         // Instruction 16 :
         Zoo z1 = new Zoo("savana","france");
         System.out.println(Zoo.comparerZoo(myZoo,z1));
+
+        // Instruction 18 et 19 : encapsulation au niveau de classe Zoo et Animal
+
+
+
 
 
     }
