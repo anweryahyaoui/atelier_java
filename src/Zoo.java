@@ -1,16 +1,17 @@
 public class Zoo {
     Animal[] animals ;
     String name,city;
-    int nbrCages,nbrAnimal;
+    static final int  nbrCages = 25;
+    int nbrAnimal;
 
     public Zoo() {
     }
 
-    public Zoo(String name, String city, int nbrCages) {
+    public Zoo(String name, String city) {
         animals = new Animal[nbrCages];
         this.name = name;
         this.city = city;
-        this.nbrCages = nbrCages;
+
     }
 
     void displayZoo(){
@@ -59,6 +60,17 @@ public class Zoo {
         }
         System.out.println("suppression avec succes");
         return true;
+
+    }
+
+    boolean isZooFull(){
+        return nbrAnimal==nbrCages;
+    }
+
+   static Zoo comparerZoo(Zoo z1,Zoo z2){
+       if(z1.nbrAnimal> z2.nbrAnimal)
+           return z1;
+       return z2;
 
     }
 
