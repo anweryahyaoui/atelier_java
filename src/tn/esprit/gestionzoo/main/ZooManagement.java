@@ -25,7 +25,7 @@ public class ZooManagement {
             // System.out.println(zooName+" comporte "+nbrCages+" cages");
 
         // Instruction 5 :
-           //  tn.esprit.gestionzoo.entities.Animal lion = new tn.esprit.gestionzoo.entities.Animal();
+           //  Animal lion = new Animal();
             /*
             lion.family = "cats";
 
@@ -34,7 +34,7 @@ public class ZooManagement {
             lion.isMammal = true;
             */
 
-           // tn.esprit.gestionzoo.entities.Zoo myZoo = new tn.esprit.gestionzoo.entities.Zoo();
+           //Zoo myZoo = new Zoo();
             /*
             myZoo.name = "belvider";
             myZoo.city = "tunisie";
@@ -43,8 +43,8 @@ public class ZooManagement {
             */
         // Instruction 6 : creation de constructeur parametre
         // Instruction 7 :
-      //  tn.esprit.gestionzoo.entities.Animal lion = new tn.esprit.gestionzoo.entities.Animal("cats","simba",10,true);
-      //  tn.esprit.gestionzoo.entities.Zoo myZoo = new tn.esprit.gestionzoo.entities.Zoo("belveder","tunisie",40);
+      //  Animal lion = new Animal("cats","simba",10,true);
+      //  Zoo myZoo = new Zoo("belveder","tunisie",40);
         // Instruction 8 :
         // myZoo.displayZoo();
        // System.out.println(myZoo.toString());
@@ -145,6 +145,18 @@ public class ZooManagement {
         myZoo.displayNumberOfAquaticsByType();
 
         System.out.println(myZoo.maxPenguinSwimmingDepth());
+
+        // Instruction 32 33 34:
+        try {
+
+         myZoo.addAnimal(new Animal("cats","fahd",5,true));
+         myZoo.displayAnimals();
+        }catch (ZooFullException e){
+         System.out.println(e.getMessage());
+        }
+        catch (InvalidAgeException e){
+         System.out.println(e.getMessage());
+        }
 
     }
 }
