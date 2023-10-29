@@ -5,15 +5,34 @@ public class Zoo {
    private String name,city;
     static final int  nbrCages = 25;
    private int nbrAnimal;
+  private Aquatic[] aquaticAnimals;
+    private int nbrAquatics;
 
     public Zoo() {
     }
 
     public Zoo(String name, String city) {
         animals = new Animal[nbrCages];
+        aquaticAnimals = new Aquatic[10];
         this.name = name;
         this.city = city;
 
+    }
+
+    public void setAquaticAnimals(Aquatic[] aquaticAnimals) {
+        this.aquaticAnimals = aquaticAnimals;
+    }
+
+    public void setNbrAquatics(int nbrAquatics) {
+        this.nbrAquatics = nbrAquatics;
+    }
+
+    public Aquatic[] getAquaticAnimals() {
+        return aquaticAnimals;
+    }
+
+    public int getNbrAquatics() {
+        return nbrAquatics;
     }
 
     public Animal[] getAnimals() {
@@ -69,6 +88,8 @@ public class Zoo {
         }
     }
 
+
+
     void displayAnimals(){
         System.out.println("les animaux exist dans le zoo "+name);
         for (int i=0;i<nbrAnimal;i++){
@@ -110,6 +131,36 @@ public class Zoo {
            return z1;
        return z2;
 
+    }
+
+    public void addAquaticAnimal(Aquatic aquatic) {
+        aquaticAnimals[nbrAquatics] = aquatic;
+        nbrAquatics++;
+    }
+
+    public float maxPenguinSwimmingDepth() {
+        float maxDepth = 0f;
+        for (int i = 0; i < nbrAquatics; i++) {
+            if (aquaticAnimals[i] instanceof Penguin penguin) {
+                if (maxDepth < penguin.getSwimmingDepth())
+                    maxDepth = penguin.getSwimmingDepth();
+            }
+        }
+        return maxDepth;
+    }
+
+    public void displayNumberOfAquaticsByType() {
+        int nbrPenguins = 0;
+        int nbrDolphins = 0;
+        for (int i = 0; i < nbrAquatics; i++) {
+            if (aquaticAnimals[i] instanceof Dolphin) {
+                nbrDolphins++;
+            }
+            if (aquaticAnimals[i] instanceof Penguin) {
+                nbrPenguins++;
+            }
+        }
+        System.out.println("Le Zoo " + name + " contient " + nbrDolphins + " dauphins et " + nbrPenguins + " pingouins");
     }
 
     @Override
