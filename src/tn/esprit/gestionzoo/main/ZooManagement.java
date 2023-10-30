@@ -158,5 +158,15 @@ public class ZooManagement {
          System.out.println(e.getMessage());
         }
 
+
+        // Instruction 35,36,37,38
+     Aquatic aquatic1 = new Aquatic("Fish", "Sardine", 2, true, "Sea");
+     Terrestrial terrestrial1 = new Terrestrial("Panda", "Narla", 4, true, 2);
+     Penguin penguin1 = new Penguin("Spheniscidae", "Skipper", 3, true, "Ocean", 25.3f);
+
+     aquatic1.eatMeat(Food.MEAT);
+     terrestrial1.eatPlantAndMeet(Food.BOTH);
+     penguin1.eatMeat(Food.MEAT);
+
     }
 }

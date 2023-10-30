@@ -1,6 +1,6 @@
 package tn.esprit.gestionzoo.entities;
 
-public  non-sealed class Aquatic extends Animal {
+public  non-sealed class Aquatic extends Animal implements Carnivore<Food> {
     String habitat;
 
     public Aquatic() {
@@ -26,5 +26,10 @@ public  non-sealed class Aquatic extends Animal {
     }
     public String toString() {
         return super.toString() + ", habitat:" + habitat;
+    }
+
+    @Override
+    public void eatMeat(Food meat) {
+
     }
 }
